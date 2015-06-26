@@ -1,4 +1,5 @@
 ﻿using System;
+using Orders_Core.Adapters.DataAccess;
 using Orders_Core.Ports.Commands;
 using Orders_Core.Ports.Handlers;
 using Orders_Service.Ports.Mappers;
@@ -32,6 +33,7 @@ namespace Orders_Service.Adapters.ServiceHost
             container.Register<CompleteOrderCommandHandler, CompleteOrderCommandHandler>();
             container.Register<EditOrderCommandHandler, EditOrderCommandHandler>();
             container.Register<OrderUpdateCommandHandler, OrderUpdateCommandHandler>();
+            container.Register<IOrdersDAO, OrdersDAO>();
 
             var handlerFactory = new TinyIocHandlerFactory(container);
             var messageMapperFactory = new TinyIoCMessageMapperFactory(container);

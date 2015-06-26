@@ -80,14 +80,13 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\DataAccess\IOrdersDAO.cs" />
-    <Compile Include="Adapters\DataAccess\OrdersDao.cs" />
+    <Compile Include="Adapters\DataAccess\OrdersDAO.cs" />
     <Compile Include="Adapters\MailGateway\IAmAMailGateway.cs" />
     <Compile Include="Adapters\MailGateway\MailGateway.cs" />
     <Compile Include="Adapters\Tests\OrderCommandHandlersFixture.cs" />

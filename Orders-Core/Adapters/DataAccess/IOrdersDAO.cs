@@ -30,12 +30,10 @@ namespace Orders_Core.Adapters.DataAccess
     public interface IOrdersDAO
     {
         dynamic BeginTransaction();
-
         Order Add(Order newOrder);
         IEnumerable<Order> FindAll();
         Order FindById(int id);
         void Update(Order order);
-
         void Clear();
     }
 }
