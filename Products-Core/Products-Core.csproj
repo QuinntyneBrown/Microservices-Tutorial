@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Adapters\DataAccess\IProductsDAO.cs" />
     <Compile Include="Adapters\DataAccess\ProductDAO.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
