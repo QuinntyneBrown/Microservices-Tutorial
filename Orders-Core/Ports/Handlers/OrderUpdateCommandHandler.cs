@@ -31,11 +31,11 @@ using paramore.brighter.commandprocessor.policy.Attributes;
 
 namespace Orders_Core.Ports.Handlers
 {
-    public class MailTaskReminderHandler : RequestHandler<OrderUpdateCommand>
+    public class OrderUpdateCommandHandler : RequestHandler<OrderUpdateCommand>
     {
         private readonly IAmAMailGateway _mailGateway;
 
-        public MailTaskReminderHandler(IAmAMailGateway mailGateway, ILog logger) : base(logger)
+        public OrderUpdateCommandHandler(IAmAMailGateway mailGateway, ILog logger) : base(logger)
         {
             _mailGateway = mailGateway;
         }
