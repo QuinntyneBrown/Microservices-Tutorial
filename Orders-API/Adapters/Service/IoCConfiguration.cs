@@ -1,6 +1,9 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
 using Orders_API.Adapters.Configuration;
+using Orders_API.Adapters.Controllers;
+using Orders_Core.Adapters.DataAccess;
+using Orders_Core.Ports.ViewModelRetrievers;
 using paramore.brighter.commandprocessor;
 using paramore.brighter.commandprocessor.Logging;
 using Polly;
@@ -11,18 +14,15 @@ namespace Orders_API.Adapters.Service
     {
         public static void Run(UnityContainer container)
         {
-            //container.RegisterType<DomainController>();
+            container.RegisterType<OrdersController>();
             container.RegisterInstance(typeof(ILog), LogProvider.For<OrderService>(), new ContainerControlledLifetimeManager());
-            //container.RegisterType<AddFeedCommandHandler>();
+            container.RegisterType<OrdersDAO>();
 
             var handlerFactory = new UnityHandlerFactory(container);
 
-            var subscriberRegistry = new SubscriberRegistry
-            {
-                //{typeof(AddFeedCommand), typeof(AddFeedCommandHandler)},
-            };
-
+            var subscriberRegistry = new SubscriberRegistry();
             //create policies
+
             var retryPolicy = Policy
                 .Handle<Exception>()
                 .WaitAndRetry(new[]

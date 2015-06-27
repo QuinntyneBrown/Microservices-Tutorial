@@ -74,11 +74,10 @@ namespace Orders_API.Adapters.Service
         private static void MapRoutes(HttpConfiguration configuration)
         {
             configuration.MapHttpAttributeRoutes();
-            /*configuration.Routes.MapHttpRoute(
+            configuration.Routes.MapHttpRoute(
                 name: "OrdersAPI",
-                routeTemplate: "orders/{controller}/{id}",
+                routeTemplate: "{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional });
-             */
         }
 
         private static void ConfigureDependencyInjection(HttpConfiguration configuration)
