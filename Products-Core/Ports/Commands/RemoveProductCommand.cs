@@ -5,11 +5,11 @@ namespace Products_Core.Ports.Commands
 {
     public class RemoveProductCommand : Command
     {
-        public RemoveProductCommand(Guid productId) : base(Guid.NewGuid())
+        public RemoveProductCommand(int productId) : base(Guid.NewGuid())
         {
             ProductId = productId;
         }
 
-        public Guid ProductId { get; private set; }
+        public int ProductId { get; private set; }
     }
 }

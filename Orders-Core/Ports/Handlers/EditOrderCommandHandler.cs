@@ -57,7 +57,7 @@ namespace Orders_Core.Ports.Handlers
                 scope.Commit();
             }
 
-            return editOrderCommand;
+            return base.Handle(editOrderCommand);
         }
     }
 }

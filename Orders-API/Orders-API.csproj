@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{21005F54-1EB6-440A-AFF2-3D1F4E203710}</ProjectGuid>
+    <ProjectGuid>{41DDE609-B01C-4A8F-967F-0D0A88836CF7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Product_API</RootNamespace>
-    <AssemblyName>Product-API</AssemblyName>
+    <RootNamespace>Orders_API</RootNamespace>
+    <AssemblyName>Orders-API</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -66,15 +66,13 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="paramore.brighter.commandprocessor, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="paramore.brighter.commandprocessor">
       <HintPath>..\packages\paramore.brighter.commandprocessor.4.0.215\lib\net45\paramore.brighter.commandprocessor.dll</HintPath>
     </Reference>
     <Reference Include="Polly">
@@ -98,6 +96,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
@@ -125,11 +124,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\Configuration\ProductServiceConfiguration.cs" />
+    <Compile Include="Adapters\Configuration\OrderServiceConfiguration.cs" />
     <Compile Include="Adapters\Configuration\UnityHandlerFactory.cs" />
-    <Compile Include="Adapters\Controllers\FeedController.cs" />
+    <Compile Include="Adapters\Controllers\OrdersController.cs" />
     <Compile Include="Adapters\Service\IoCConfiguration.cs" />
-    <Compile Include="Adapters\Service\ProductService.cs" />
+    <Compile Include="Adapters\Service\OrderService.cs" />
     <Compile Include="Adapters\Service\Startup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,9 +142,9 @@
     <Folder Include="Adapters\Formatters\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Products-Core\Products-Core.csproj">
-      <Project>{1dcf878d-fcdd-4f84-ac12-e0453b320ff8}</Project>
-      <Name>Products-Core</Name>
+    <ProjectReference Include="..\Orders-Core\Orders-Core.csproj">
+      <Project>{0b86762c-9322-44c7-9665-146237032d9a}</Project>
+      <Name>Orders-Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

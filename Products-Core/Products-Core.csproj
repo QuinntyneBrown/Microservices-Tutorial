@@ -58,6 +58,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\Atom\ProductEntry.cs" />
     <Compile Include="Adapters\DataAccess\IProductsDAO.cs" />
     <Compile Include="Adapters\DataAccess\ProductDAO.cs" />
     <Compile Include="Globals.cs" />
@@ -65,10 +66,18 @@
     <Compile Include="Ports\Commands\AddProductCommand.cs" />
     <Compile Include="Ports\Commands\ChangeProductCommand.cs" />
     <Compile Include="Ports\Commands\RemoveProductCommand.cs" />
+    <Compile Include="Ports\Events\ProductAddedEvent.cs" />
+    <Compile Include="Ports\Events\ProductChangedEvent.cs" />
+    <Compile Include="Ports\Events\ProductRemovedEvent.cs" />
+    <Compile Include="Ports\Handlers\AddProductCommandHandler.cs" />
+    <Compile Include="Ports\Handlers\ChangeProductCommandHandler.cs" />
+    <Compile Include="Ports\Handlers\ProductAddedEventHandler.cs" />
+    <Compile Include="Ports\Handlers\ProductChangedEventHandler.cs" />
+    <Compile Include="Ports\Handlers\ProductRemovedEventHandler.cs" />
+    <Compile Include="Ports\Handlers\RemoveProductCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Ports\Handlers\" />
     <Folder Include="Ports\ViewModelRetrievers\" />
   </ItemGroup>
   <ItemGroup>

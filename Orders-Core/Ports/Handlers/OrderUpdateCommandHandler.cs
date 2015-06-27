@@ -43,16 +43,16 @@ namespace Orders_Core.Ports.Handlers
         [RequestLogging(step: 1, timing: HandlerTiming.Before)]
         [UsePolicy(CommandProcessor.CIRCUITBREAKER, step: 2)]
         [UsePolicy(CommandProcessor.RETRYPOLICY, step: 3)]
-        public override OrderUpdateCommand Handle(OrderUpdateCommand command)
+        public override OrderUpdateCommand Handle(OrderUpdateCommand orderUpdateCommand)
         {
             _mailGateway.Send(new OrderUpdate(
-                orderReference: new OrderReference(command.OrderName),
-                dueDate: command.DueDate,
-                reminderTo: new EmailAddress(command.Recipient),
-                copyReminderTo: new EmailAddress(command.CopyTo)
+                orderReference: new OrderReference(orderUpdateCommand.OrderName),
+                dueDate: orderUpdateCommand.DueDate,
+                reminderTo: new EmailAddress(orderUpdateCommand.Recipient),
+                copyReminderTo: new EmailAddress(orderUpdateCommand.CopyTo)
                 ));
 
-            return base.Handle(command);
+            return base.Handle(orderUpdateCommand);
         }
     }
 }

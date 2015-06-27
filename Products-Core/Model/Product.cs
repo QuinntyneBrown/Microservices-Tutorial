@@ -7,15 +7,16 @@ namespace Products_Core.Model
 
         public Product() { /*Required by Simple.Data*/}
 
-        public Product(string productName, string productDescription)
+        public Product(string productName, string productDescription, double productPrice)
         {
             ProductName = productName;
             ProductDescription = productDescription;
+            ProductPrice = productPrice;
         }
 
         public string ProductDescription { get; set; }
-        public Guid Id { get; set; }
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public double Price { get; set; }
+        public double ProductPrice { get; set; }
     }
 }

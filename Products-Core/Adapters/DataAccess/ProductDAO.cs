@@ -35,6 +35,16 @@ namespace Products_Core.Adapters.DataAccess
             return _db.Products.Insert(newProduct);
         }
 
+        public void Clear()
+        {
+            _db.Products.DeleteAll();
+        }
+
+        public void Delete(int productId)
+        {
+            _db.Products.DeleteById(productId);
+        }
+
         public IEnumerable<Product> FindAll()
         {
             return _db.Products.All().ToList<Product>();
@@ -50,9 +60,5 @@ namespace Products_Core.Adapters.DataAccess
             _db.Products.UpdateById(product);
         }
 
-        public void Clear()
-        {
-            _db.Products.DeleteAll();
-        }
     }
 }

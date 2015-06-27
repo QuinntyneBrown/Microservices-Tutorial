@@ -60,7 +60,7 @@ namespace Orders_Core.Ports.Handlers
                     throw new ArgumentOutOfRangeException("completeOrderCommand", completeOrderCommand, "Could not find the task to complete");
                 }
             }
-            return completeOrderCommand;
+            return base.Handle(completeOrderCommand);
         }
     }
 }

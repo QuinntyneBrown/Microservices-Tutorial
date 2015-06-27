@@ -7,9 +7,10 @@ namespace Products_Core.Adapters.DataAccess
     {
         dynamic BeginTransaction();
         Product Add(Product newProduct);
+        void Clear();
+        void Delete(int productId);
         IEnumerable<Product> FindAll();
         Product FindById(int id);
         void Update(Product product);
-        void Clear();
     }
 }

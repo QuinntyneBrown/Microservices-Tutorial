@@ -60,7 +60,7 @@ namespace Orders_Core.Ports.Handlers
                 addOrderCommand.OrderId = inserted.Id;
             }
 
-            return addOrderCommand;
+            return base.Handle(addOrderCommand);
         }
     }
 }
