@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Grean.AtomEventStore">
+      <HintPath>..\packages\AtomEventStore.1.7.4\lib\net45\Grean.AtomEventStore.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -59,9 +62,13 @@
     <Compile Include="Adapters\DataAccess\ProductDAO.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Ports\Commands\AddProductCommand.cs" />
+    <Compile Include="Ports\Commands\ChangeProductCommand.cs" />
+    <Compile Include="Ports\Commands\RemoveProductCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Ports\Handlers\" />
     <Folder Include="Ports\ViewModelRetrievers\" />
   </ItemGroup>
   <ItemGroup>

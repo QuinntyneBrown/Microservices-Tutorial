@@ -1,14 +1,14 @@
 ﻿using System;
+using Microsoft.Practices.Unity;
 using paramore.brighter.commandprocessor;
-using TinyIoC;
 
 namespace Orders_Service.Adapters.ServiceHost
 {
-    internal class TinyIoCMessageMapperFactory : IAmAMessageMapperFactory
+    internal class UnityMessageMapperFactory : IAmAMessageMapperFactory
     {
-        private readonly TinyIoCContainer _container;
+        private readonly UnityContainer _container;
 
-        public TinyIoCMessageMapperFactory(TinyIoCContainer container)
+        public UnityMessageMapperFactory (UnityContainer container)
         {
             _container = container;
         }

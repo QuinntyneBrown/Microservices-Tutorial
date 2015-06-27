@@ -7,8 +7,8 @@
     <ProjectGuid>{21005F54-1EB6-440A-AFF2-3D1F4E203710}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Product_Service</RootNamespace>
-    <AssemblyName>Product-Service</AssemblyName>
+    <RootNamespace>Product_API</RootNamespace>
+    <AssemblyName>Product-API</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

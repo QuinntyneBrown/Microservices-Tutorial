@@ -1,7 +1,7 @@
-﻿using Product_Service.Adapters.Service;
+﻿using Product_API.Adapters.Service;
 using Topshelf;
 
-namespace Product_Service
+namespace Product_API
 {
     class Program
     {

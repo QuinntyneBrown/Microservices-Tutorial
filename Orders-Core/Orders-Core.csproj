@@ -92,6 +92,7 @@
     <Compile Include="Adapters\Tests\OrderCommandHandlersFixture.cs" />
     <Compile Include="Adapters\Tests\OrderDAOFixture.cs" />
     <Compile Include="Adapters\Tests\OrderMailerServiceFixture.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="Model\EmailAddress.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderReference.cs" />
