@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Microsoft.Owin.Hosting;
 using Product_API.Adapters.Configuration;
 using Product_Service;
@@ -14,6 +15,9 @@ namespace Product_API.Adapters.Service
             var configuration = ProductServerConfiguration.GetConfiguration();
             var uri = configuration.Address.Uri;
             Globals.HostName = uri.Host + ":" + uri.Port;
+            Globals.StoragePath = Path.Combine(Environment.CurrentDirectory, Guid.NewGuid().ToString("N"));
+            Globals.PageSize = 25;
+            Globals.EventStreamId = Guid.Parse("{028872FE-CAD5-492A-822A-1AF00AD80708}");
             _app = WebApp.Start<StartUp>(configuration.Address.Uri.AbsoluteUri);
             return true;
         }

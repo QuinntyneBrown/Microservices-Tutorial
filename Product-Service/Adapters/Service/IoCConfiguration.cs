@@ -4,6 +4,7 @@ using paramore.brighter.commandprocessor;
 using paramore.brighter.commandprocessor.Logging;
 using Polly;
 using Product_API.Adapters.Configuration;
+using Product_API.Adapters.Controllers;
 
 namespace Product_API.Adapters.Service
 {
@@ -11,7 +12,7 @@ namespace Product_API.Adapters.Service
     {
         public static void Run(UnityContainer container)
         {
-            //container.RegisterType<DomainController>();
+            container.RegisterType<FeedController>();
             container.RegisterInstance(typeof(ILog), LogProvider.For<ProductService>(), new ContainerControlledLifetimeManager());
             //container.RegisterType<AddFeedCommandHandler>();
 

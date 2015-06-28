@@ -33,8 +33,9 @@
     <Reference Include="FakeItEasy">
       <HintPath>..\packages\FakeItEasy.1.25.2\lib\net40\FakeItEasy.dll</HintPath>
     </Reference>
-    <Reference Include="Grean.AtomEventStore">
-      <HintPath>..\packages\AtomEventStore.1.7.4\lib\net45\Grean.AtomEventStore.dll</HintPath>
+    <Reference Include="Grean.AtomEventStore, Version=1.7.4.0, Culture=neutral, PublicKeyToken=6d16248e93d9c43e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AtomEventStorage\Grean.AtomEventStore.dll</HintPath>
     </Reference>
     <Reference Include="Machine.Specifications">
       <HintPath>..\packages\Machine.Specifications.0.9.1\lib\net45\Machine.Specifications.dll</HintPath>
@@ -76,6 +77,7 @@
     <Compile Include="Adapters\DataAccess\IProductsDAO.cs" />
     <Compile Include="Adapters\DataAccess\ProductsDAO.cs" />
     <Compile Include="Adapters\Tests\ProductCommandHandlersTests.cs" />
+    <Compile Include="Adapters\Tests\ProductEventHandlerTests.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Ports\Commands\AddProductCommand.cs" />

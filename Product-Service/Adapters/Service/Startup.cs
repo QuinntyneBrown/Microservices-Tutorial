@@ -74,17 +74,12 @@ namespace Product_API.Adapters.Service
         private static void MapRoutes(HttpConfiguration configuration)
         {
             configuration.MapHttpAttributeRoutes();
-            /*configuration.Routes.MapHttpRoute(
-                name: "DomainAPI",
-                routeTemplate: "restms/{controller}/{name}",
-                defaults: new { name = RouteParameter.Optional });
-
             configuration.Routes.MapHttpRoute(
-                name: "MessageAPI",
-                routeTemplate: "restms/pipe/{pipeName}/{controller}/{messageName}",
-                defaults: new { pipeName = RouteParameter.Optional, messageName = RouteParameter.Optional }
+                name: "ProductReferenceDataAPI",
+                routeTemplate: "{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
                 );
-             */
+             
         }
 
         private static void ConfigureDependencyInjection(HttpConfiguration configuration)
