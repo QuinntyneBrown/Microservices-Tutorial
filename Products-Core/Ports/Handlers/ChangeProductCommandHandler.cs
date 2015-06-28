@@ -34,7 +34,7 @@ namespace Products_Core.Ports.Handlers
             }
 
             if (product != null)
-                _commandProcessor.Publish(new ProductChangedEvent(product.ProductId, product.ProductName, product.ProductDescription, product.ProductPrice));
+                _commandProcessor.Publish(new ProductChangedEvent(product.Id, product.ProductName, product.ProductDescription, product.ProductPrice));
 
             return base.Handle(changeProductCommand);
         }

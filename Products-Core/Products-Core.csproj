@@ -30,8 +30,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FakeItEasy">
+      <HintPath>..\packages\FakeItEasy.1.25.2\lib\net40\FakeItEasy.dll</HintPath>
+    </Reference>
     <Reference Include="Grean.AtomEventStore">
       <HintPath>..\packages\AtomEventStore.1.7.4\lib\net45\Grean.AtomEventStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\packages\Machine.Specifications.0.9.1\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\packages\Machine.Specifications.0.9.1\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\packages\Machine.Specifications.Should.0.7.2\lib\net45\Machine.Specifications.Should.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -55,12 +67,15 @@
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\Atom\ProductEntry.cs" />
     <Compile Include="Adapters\DataAccess\IProductsDAO.cs" />
-    <Compile Include="Adapters\DataAccess\ProductDAO.cs" />
+    <Compile Include="Adapters\DataAccess\ProductsDAO.cs" />
+    <Compile Include="Adapters\Tests\ProductCommandHandlersTests.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Ports\Commands\AddProductCommand.cs" />

@@ -35,10 +35,12 @@ namespace Products_Core.Ports.Handlers
 
                 scope.Commit();
 
+                addProductCommand.ProductId = insertedProduct.Id;
+
             }
 
             if (insertedProduct != null)
-                _commandProcessor.Publish(new ProductAddedEvent(insertedProduct.ProductId, insertedProduct.ProductName, insertedProduct.ProductDescription, insertedProduct.ProductPrice));
+                _commandProcessor.Publish(new ProductAddedEvent(insertedProduct.Id, insertedProduct.ProductName, insertedProduct.ProductDescription, insertedProduct.ProductPrice));
 
             return base.Handle(addProductCommand);
         }

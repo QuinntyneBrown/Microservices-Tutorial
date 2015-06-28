@@ -6,11 +6,11 @@ using Simple.Data;
 
 namespace Products_Core.Adapters.DataAccess
 {
-    class ProductDAO : IProductsDAO
+    class ProductsDAO : IProductsDAO
     {
         private readonly dynamic _db;
 
-        public ProductDAO()
+        public ProductsDAO()
         {
             if (System.Web.HttpContext.Current != null)
             {
@@ -52,7 +52,7 @@ namespace Products_Core.Adapters.DataAccess
 
         public Product FindById(int id)
         {
-            return _db.Orders.FindById(id);
+            return _db.Products.FindById(id);
         }
 
         public void Update(Product product)

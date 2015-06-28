@@ -15,5 +15,6 @@ namespace Products_Core.Ports.Commands
         public string ProductDescription { get; private set; }
         public string ProductName { get; private set; }
         public double ProductPrice { get; set; }
+        public int ProductId { get; set; }
     }
 }

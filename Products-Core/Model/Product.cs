@@ -15,7 +15,7 @@ namespace Products_Core.Model
         }
 
         public string ProductDescription { get; set; }
-        public int ProductId { get; set; }
+        public int Id { get; set; }
         public string ProductName { get; set; }
         public double ProductPrice { get; set; }
     }
