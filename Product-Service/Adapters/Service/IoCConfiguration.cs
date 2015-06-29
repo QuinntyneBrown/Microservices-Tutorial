@@ -1,10 +1,18 @@
 ﻿using System;
+using System.IO;
+using Grean.AtomEventStore;
 using Microsoft.Practices.Unity;
 using paramore.brighter.commandprocessor;
 using paramore.brighter.commandprocessor.Logging;
 using Polly;
+using Products_Core.Adapters.Atom;
+using Products_Core.Adapters.DataAccess;
+using Products_Core.Ports.Commands;
+using Products_Core.Ports.Events;
+using Products_Core.Ports.Handlers;
 using Product_API.Adapters.Configuration;
 using Product_API.Adapters.Controllers;
+using Product_Service;
 
 namespace Product_API.Adapters.Service
 {
@@ -13,14 +21,38 @@ namespace Product_API.Adapters.Service
         public static void Run(UnityContainer container)
         {
             container.RegisterType<FeedController>();
+            container.RegisterType<ProductsController>();
             container.RegisterInstance(typeof(ILog), LogProvider.For<ProductService>(), new ContainerControlledLifetimeManager());
-            //container.RegisterType<AddFeedCommandHandler>();
+            container.RegisterType<IProductsDAO, ProductsDAO>();
+            container.RegisterType<AddProductCommandHandler>();
+            container.RegisterType<ChangeProductCommandHandler>();
+            container.RegisterType<ProductAddedEventHandler>();
+            container.RegisterType<ProductChangedEventHandler>();
+            container.RegisterType<ProductRemovedEventHandler>();
+            container.RegisterType<RemoveProductCommandHandler>();
+
+            var storage = new AtomEventsInFiles(new DirectoryInfo(Globals.StoragePath));
+            var serializer = new DataContractContentSerializer(
+                DataContractContentSerializer
+                    .CreateTypeResolver(typeof (ProductEntry).Assembly)
+                );
+
+            var events = new FifoEvents<ProductEntry>(
+                Globals.EventStreamId, 
+                storage,       
+                serializer);
+
+            container.RegisterInstance(typeof (IObserver<ProductEntry>), events, new TransientLifetimeManager());
 
             var handlerFactory = new UnityHandlerFactory(container);
 
             var subscriberRegistry = new SubscriberRegistry
             {
-                //{typeof(AddFeedCommand), typeof(AddFeedCommandHandler)},
+                {typeof(AddProductCommand), typeof(AddProductCommandHandler)},
+                {typeof(ChangeProductCommand), typeof(ChangeProductCommandHandler)},
+                {typeof(RemoveProductCommand), typeof(RemoveProductCommandHandler)},
+                {typeof(ProductAddedEvent), typeof(ProductAddedEventHandler)},
+                {typeof(ProductRemovedEvent), typeof(ProductRemovedEventHandler)},
             };
 
             //create policies

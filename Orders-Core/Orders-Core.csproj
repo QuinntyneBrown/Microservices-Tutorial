@@ -113,6 +113,7 @@
     <Compile Include="Ports\MailTranslator.cs" />
     <Compile Include="Ports\OrderUpdateCommandMessageMapper.cs" />
     <Compile Include="Ports\Resources\Link.cs" />
+    <Compile Include="Ports\Resources\OrderListItemModel.cs" />
     <Compile Include="Ports\Resources\OrderListModel.cs" />
     <Compile Include="Ports\ViewModelRetrievers\OrderListModelRetriever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

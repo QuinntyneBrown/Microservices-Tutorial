@@ -133,6 +133,7 @@
     <Compile Include="Adapters\Configuration\ProductServiceConfiguration.cs" />
     <Compile Include="Adapters\Configuration\UnityHandlerFactory.cs" />
     <Compile Include="Adapters\Controllers\FeedController.cs" />
+    <Compile Include="Adapters\Controllers\ProductsController.cs" />
     <Compile Include="Adapters\Service\IoCConfiguration.cs" />
     <Compile Include="Adapters\Service\ProductService.cs" />
     <Compile Include="Adapters\Service\Startup.cs" />

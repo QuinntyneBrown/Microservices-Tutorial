@@ -30,9 +30,9 @@ namespace Product_API.Adapters.Controllers
         public FeedController()
         {
             _events = new FifoEvents<ProductEntry>(
-                Globals.EventStreamId, // a Guid
-                s_storage,       // an IAtomEventStorage object
-                s_serializer);   // an IContentSerializer object
+                Globals.EventStreamId, 
+                s_storage,       
+                s_serializer);   
         }
 
         [HttpGet]
@@ -53,6 +53,8 @@ namespace Product_API.Adapters.Controllers
                     };
                 }
             }
+
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
     }
 }

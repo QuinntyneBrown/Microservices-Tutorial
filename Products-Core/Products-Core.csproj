@@ -78,6 +78,7 @@
     <Compile Include="Adapters\DataAccess\ProductsDAO.cs" />
     <Compile Include="Adapters\Tests\ProductCommandHandlersTests.cs" />
     <Compile Include="Adapters\Tests\ProductEventHandlerTests.cs" />
+    <Compile Include="Adapters\Tests\SerializationTests.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Ports\Commands\AddProductCommand.cs" />
@@ -92,11 +93,15 @@
     <Compile Include="Ports\Handlers\ProductChangedEventHandler.cs" />
     <Compile Include="Ports\Handlers\ProductRemovedEventHandler.cs" />
     <Compile Include="Ports\Handlers\RemoveProductCommandHandler.cs" />
+    <Compile Include="Ports\Resources\AddProductModel.cs" />
+    <Compile Include="Ports\Resources\Link.cs" />
+    <Compile Include="Ports\Resources\ProductListModel.cs" />
+    <Compile Include="Ports\Resources\ProductModel.cs" />
+    <Compile Include="Ports\ViewModelRetrievers\ProductListModelRetriever.cs" />
+    <Compile Include="Ports\ViewModelRetrievers\ProductModelRetriever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ports\ViewModelRetrievers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="App_Data\Products.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

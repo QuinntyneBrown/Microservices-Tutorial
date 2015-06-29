@@ -6,7 +6,7 @@ using Simple.Data;
 
 namespace Products_Core.Adapters.DataAccess
 {
-    class ProductsDAO : IProductsDAO
+    public class ProductsDAO : IProductsDAO
     {
         private readonly dynamic _db;
 

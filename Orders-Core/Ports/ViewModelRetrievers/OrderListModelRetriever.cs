@@ -20,4 +20,5 @@ namespace Orders_Core.Ports.ViewModelRetrievers
             var orderList = new OrderListModel(orders, _hostName);
             return orderList;
         }
-    }}
+    }
+}
